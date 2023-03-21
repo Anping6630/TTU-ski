@@ -18,12 +18,14 @@ public class SkiTest : MonoBehaviour
 
     void FixedUpdate()
     {
-        PlayerMovement();
+        //PlayerMovement();
+        funnyMove();
     }
-
+    private float a;
     void Update()
     {
         BoardSuck();
+        transform.rotation = Quaternion.Euler(new Vector3(0, a++, 0));
     }
 
     void BoardSuck()//·Æ³·ªO§lªþ¦a­±
@@ -43,4 +45,12 @@ public class SkiTest : MonoBehaviour
         rb.AddForce(Vector3.right * xInput * moveForce);
         rb.AddForce(Vector3.forward * yInput * moveForce);
     }
+    #region
+    void funnyMove()
+    {
+        rb.AddForce(transform.forward * moveForce);
+    }
+    #endregion
+
+    
 }

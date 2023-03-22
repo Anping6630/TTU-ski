@@ -5,6 +5,9 @@ using System;
 
 public class PlayerInputManager : MonoBehaviour
 {
+    private Singleton singleton;
+    private ArduinoRead arduinoRead;
+
     [Header("W and S")]
     public float Vertical;
     [Header("A and D")]
@@ -22,16 +25,29 @@ public class PlayerInputManager : MonoBehaviour
     private float maxLeft;
     [SerializeField]
     private float minLeft;
+    [Header("ArduinoControllMode")]
+    private bool isArduinoMode;
 
-
+    private void Start()
+    {
+        singleton = Singleton.singleton;
+        arduinoRead = singleton.arduinoRead;
+    }
     private void Update()
     {
         vertical();
         horizontal();
         SpacePressed();
-        controller_Right();
+        if (isArduinoMode)
+        {
+            contorller_Arduino();
+        }
+        else
+        {
+            controller_Right();
+            controller_Left();
+        }
         controller_Right_limiter();
-        controller_Left();
         controller_Left_limiter();
 
     }
@@ -73,6 +89,11 @@ public class PlayerInputManager : MonoBehaviour
         {
             Controller_Left -= Time.deltaTime;
         }
+    }
+    private void contorller_Arduino()
+    {
+        Controller_Left = arduinoRead.valueL;
+        Controller_Right = arduinoRead.valueR;
     }
     private void controller_Right_limiter()
     {

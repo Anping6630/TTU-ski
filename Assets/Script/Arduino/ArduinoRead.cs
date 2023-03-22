@@ -5,16 +5,22 @@ using System.IO.Ports;
 
 public class ArduinoRead : MonoBehaviour
 {
-    public SerialPort sp;
-    float i;
+    [Header("ArduinoPort")]
+    public string portName;
+    [Header("BaudRate")]
+    public int baud;
+
+    SerialPort sp;
+
+    public float valueL;
+    public float valueR;
 
     void Start()
     {
-        sp = new SerialPort("COM6",9600);//根據裝置調整
+        sp = new SerialPort(portName,baud);
         try
         {
             sp.Open();
-            print("成功打開");
         }
         catch (System.Exception)
         {
@@ -31,8 +37,9 @@ public class ArduinoRead : MonoBehaviour
                 string value = sp.ReadExisting();
                 if (value != "")
                 {
-                    float.TryParse(sp.ReadExisting(), out i); //轉成float
-                    Debug.Log(value);
+                    string[] sArray = value.Split("~");
+                    float.TryParse(sArray[0], out valueL);
+                    float.TryParse(sArray[1], out valueR);
                 }
             }
         }

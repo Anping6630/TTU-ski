@@ -14,4 +14,5 @@ public class Singleton : MonoBehaviour
     #endregion
 
     public PlayerInputManager playerInputManager;
+    public ArduinoRead arduinoRead;
 }

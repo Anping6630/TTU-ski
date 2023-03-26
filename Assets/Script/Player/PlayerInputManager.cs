@@ -14,42 +14,35 @@ public class PlayerInputManager : MonoBehaviour
     public float Horizontal;
     public event Action OnSpacePressed;
     [Header("I & J")]
-    public float Controller_Right;
+    public float Controller_Right = 0.5f;
     [SerializeField]
     private float maxRight = 1;
     [SerializeField]
     private float minRight = -1;
     [Header("R & F")]
-    public float Controller_Left;
+    public float Controller_Left = 0.5f;
     [SerializeField]
     private float maxLeft;
     [SerializeField]
     private float minLeft;
     [Header("ArduinoControllMode")]
+    [SerializeField]
     private bool isArduinoMode;
 
     private void Start()
     {
         singleton = Singleton.singleton;
         arduinoRead = singleton.arduinoRead;
+        setStartControllerValue();
     }
     private void Update()
     {
         vertical();
         horizontal();
         SpacePressed();
-        if (isArduinoMode)
-        {
-            contorller_Arduino();
-        }
-        else
-        {
-            controller_Right();
-            controller_Left();
-        }
+        ArduinoCheck();
         controller_Right_limiter();
         controller_Left_limiter();
-
     }
     private void vertical()
     {
@@ -104,5 +97,22 @@ public class PlayerInputManager : MonoBehaviour
     {
         if (Controller_Left > maxLeft) Controller_Left = maxLeft;
         if (Controller_Left < minLeft) Controller_Left = minLeft;
+    }
+    void setStartControllerValue()
+    {
+        Controller_Left = 0.5f;
+        Controller_Right = 0.5f;
+    }
+    void ArduinoCheck()
+    {
+        if (isArduinoMode)
+        {
+            contorller_Arduino();
+        }
+        else
+        {
+            controller_Right();
+            controller_Left();
+        }
     }
 }

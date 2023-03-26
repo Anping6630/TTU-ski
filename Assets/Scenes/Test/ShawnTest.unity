@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30706820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.051758, y: 164.41, z: 30.4973}
+  m_LocalPosition: {x: 24.051758, y: 164.41, z: 30.497307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1311,7 +1311,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526361115}
-  m_LocalRotation: {x: 0.27519086, y: 0.642002, z: -0.26592594, w: 0.6643695}
+  m_LocalRotation: {x: 0.27519056, y: 0.6420029, z: -0.26592636, w: 0.6643687}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1630,6 +1630,7 @@ MonoBehaviour:
   Controller_Left: 0
   maxLeft: 1
   minLeft: 0
+  isArduinoMode: 0
 --- !u!114 &598406009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3183,7 +3184,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461304335}
-  m_LocalRotation: {x: 0.25087607, y: 0.6512381, z: -0.24242976, w: 0.67392737}
+  m_LocalRotation: {x: 0.25087577, y: 0.65123886, z: -0.24243005, w: 0.67392653}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3525,7 +3526,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658066145}
-  m_LocalRotation: {x: 0.2630608, y: 0.6467328, z: -0.25420424, w: 0.6692652}
+  m_LocalRotation: {x: 0.26306048, y: 0.6467337, z: -0.25420457, w: 0.66926444}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3864,7 +3865,6 @@ GameObject:
   - component: {fileID: 1717055884}
   - component: {fileID: 1717055883}
   - component: {fileID: 1717055882}
-  - component: {fileID: 1717055886}
   - component: {fileID: 1717055887}
   - component: {fileID: 1717055888}
   m_Layer: 0
@@ -3881,7 +3881,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717055880}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.9332673, z: 0, w: -0.35918257}
   m_LocalPosition: {x: 0, y: 1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3968,21 +3968,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717055880}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1717055886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717055880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fa965ef4d5182946a05fa84dfdedf8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpForce: 1
-  IsGround: 0
-  MaxDistanceLength: 0.5
 --- !u!114 &1717055887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3995,8 +3980,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6630b6d6addf30e4d98b60c4770ef4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 100
   skiBoard: {fileID: 1717055880}
-  moveForce: 20
+  moveForce: 0
 --- !u!135 &1717055888
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4248,8 +4234,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078340837}
-  m_LocalRotation: {x: 0.2630608, y: 0.64673275, z: -0.2542043, w: 0.6692652}
-  m_LocalPosition: {x: 24.051758, y: 164.41, z: 30.4973}
+  m_LocalRotation: {x: 0.26306048, y: 0.64673376, z: -0.25420463, w: 0.6692643}
+  m_LocalPosition: {x: 24.051758, y: 164.41, z: 30.497307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

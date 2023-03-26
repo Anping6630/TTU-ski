@@ -4,28 +4,40 @@ using UnityEngine;
 
 public class SkiTest : MonoBehaviour
 {
+    private Singleton singleton;
+    private PlayerInputManager playerInput;
+    private float skiController_Left;
+    private float skiController_Right;
+    private float skirotation;
+    [Header("滑雪速度")]
+    [SerializeField]
+    private float rotationSpeed;
+
     [Header("滑雪板物件")]
     public GameObject skiBoard;
 
     public float moveForce;
+    private float moveRotation;
 
     Rigidbody rb;
 
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        singleton = Singleton.singleton;
+        playerInput = singleton.playerInputManager;
     }
 
     void FixedUpdate()
     {
-        //PlayerMovement();
-        funnyMove();
+        setControllerValue();
+        MoveForward_TestTool();
     }
-    private float a;
     void Update()
     {
-        BoardSuck();
-        transform.rotation = Quaternion.Euler(new Vector3(0, a++, 0));
+        rotationCalculate();
+        //BoardSuck();
+        skiRotate();
     }
 
     void BoardSuck()//滑雪板吸附地面
@@ -38,6 +50,25 @@ public class SkiTest : MonoBehaviour
         }
     }
 
+    
+    void MoveForward_TestTool() 
+    {
+        rb.AddForce(transform.forward * moveForce);
+    }
+    void setControllerValue()
+    {
+        skiController_Left = playerInput.Controller_Left;
+        skiController_Right = playerInput.Controller_Right;
+    }
+    void rotationCalculate()
+    {
+        skirotation = skiController_Right - skiController_Left;
+    }
+    void skiRotate()
+    {
+        this.transform.Rotate(Vector3.up, skirotation * rotationSpeed * Time.deltaTime);
+    }
+    #region
     void PlayerMovement()
     {
         float xInput = Input.GetAxis("Horizontal");
@@ -45,12 +76,5 @@ public class SkiTest : MonoBehaviour
         rb.AddForce(Vector3.right * xInput * moveForce);
         rb.AddForce(Vector3.forward * yInput * moveForce);
     }
-    #region
-    void funnyMove()
-    {
-        rb.AddForce(transform.forward * moveForce);
-    }
     #endregion
-
-    
 }

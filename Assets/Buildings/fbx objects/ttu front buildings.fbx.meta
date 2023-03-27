@@ -3,7 +3,67 @@ guid: 399e95c64d72a614a959c00975eb9e3d
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: 
+      assembly: 
+      name: dark gray iron
+    second: {fileID: 2100000, guid: 64708eb27514ce44f81e16be79a60426, type: 2}
+  - first:
+      type: 
+      assembly: 
+      name: dark gray iron no noise
+    second: {fileID: 2100000, guid: db83a1d684ad1334bb3d117582d0665f, type: 2}
+  - first:
+      type: 
+      assembly: 
+      name: glass
+    second: {fileID: 2100000, guid: a92525d9eab061049b9cf75b2f5f8e1a, type: 2}
+  - first:
+      type: 
+      assembly: 
+      name: gray floor
+    second: {fileID: 2100000, guid: c0a5620ca06975848b826b469cd9eee6, type: 2}
+  - first:
+      type: 
+      assembly: 
+      name: rock
+    second: {fileID: 2100000, guid: 8b054e4560f556e42b9597fc23c49df4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IRON
+    second: {fileID: 2100000, guid: b2f6489b1c95b6b4cbd8656671d2ca51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark gray iron
+    second: {fileID: 2100000, guid: 64708eb27514ce44f81e16be79a60426, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark gray iron no noise
+    second: {fileID: 2100000, guid: db83a1d684ad1334bb3d117582d0665f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: a92525d9eab061049b9cf75b2f5f8e1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gray floor
+    second: {fileID: 2100000, guid: c0a5620ca06975848b826b469cd9eee6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: green iron
+    second: {fileID: 2100000, guid: 4e6dced89cec9134daf81cd9e65f2090, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock
+    second: {fileID: 2100000, guid: a87554bc47839f940a193621256eaf24, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

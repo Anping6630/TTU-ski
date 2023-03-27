@@ -53,7 +53,9 @@ public class SkiTest : MonoBehaviour
     
     void MoveForward_TestTool() 
     {
-        rb.AddForce(transform.forward * moveForce);
+        Vector3 playerVelocity = new Vector3 (rb.velocity.x,rb.velocity.y,rb.velocity.z);
+        Vector3 playerForward = transform.forward * moveForce;
+        rb.velocity = playerVelocity + playerForward;
     }
     void setControllerValue()
     {

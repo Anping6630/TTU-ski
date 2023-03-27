@@ -13,6 +13,9 @@ public class PlayerInputManager : MonoBehaviour
     [Header("A and D")]
     public float Horizontal;
     public event Action OnSpacePressed;
+    [Header("Increase speed")]
+    [SerializeField]
+    private float increaseSpeed;
     [Header("I & J")]
     public float Controller_Right = 0.5f;
     [SerializeField]
@@ -65,22 +68,22 @@ public class PlayerInputManager : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.I))
         {
-            Controller_Right += Time.deltaTime;
+            Controller_Right += Time.deltaTime * increaseSpeed;
         }
         if(Input.GetKey(KeyCode.J))
         {
-            Controller_Right -= Time.deltaTime;
+            Controller_Right -= Time.deltaTime * increaseSpeed;
         }
     }
     private void controller_Left()
     {
         if (Input.GetKey(KeyCode.R))
         {
-            Controller_Left += Time.deltaTime;
+            Controller_Left += Time.deltaTime * increaseSpeed;
         }
         if (Input.GetKey(KeyCode.F))
         {
-            Controller_Left -= Time.deltaTime;
+            Controller_Left -= Time.deltaTime * increaseSpeed;
         }
     }
     private void contorller_Arduino()

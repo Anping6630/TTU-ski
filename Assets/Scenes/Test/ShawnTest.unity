@@ -1157,6 +1157,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 598406009, guid: 8752bedc56b8f2d4e95bafb3cd8cc56d, type: 3}
+      propertyPath: arduinoRead
+      value: 
+      objectReference: {fileID: 7693448160888079977}
     - target: {fileID: 5680993430552946930, guid: 8752bedc56b8f2d4e95bafb3cd8cc56d, type: 3}
       propertyPath: m_Name
       value: ----------PlayerPakage----------
@@ -1223,27 +1227,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7693448161238265999, guid: 8752bedc56b8f2d4e95bafb3cd8cc56d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.04095954
+      value: -0.040959604
       objectReference: {fileID: 0}
     - target: {fileID: 7693448161238265999, guid: 8752bedc56b8f2d4e95bafb3cd8cc56d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.016099514
+      value: -0.016099542
       objectReference: {fileID: 0}
     - target: {fileID: 7693448161238265999, guid: 8752bedc56b8f2d4e95bafb3cd8cc56d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.92978585
+      value: 0.9297858
       objectReference: {fileID: 0}
     - target: {fileID: 7693448161385894533, guid: 8752bedc56b8f2d4e95bafb3cd8cc56d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.040959556
+      value: -0.04095959
       objectReference: {fileID: 0}
     - target: {fileID: 7693448161385894533, guid: 8752bedc56b8f2d4e95bafb3cd8cc56d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.016099518
+      value: -0.016099535
       objectReference: {fileID: 0}
     - target: {fileID: 7693448161385894533, guid: 8752bedc56b8f2d4e95bafb3cd8cc56d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.92978585
+      value: 0.9297858
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8752bedc56b8f2d4e95bafb3cd8cc56d, type: 3}
+--- !u!1 &7693448160888079976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 598406005, guid: 8752bedc56b8f2d4e95bafb3cd8cc56d, type: 3}
+  m_PrefabInstance: {fileID: 7693448160888079975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7693448160888079977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7693448160888079976}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7f95566e96a0df4199f85af99291af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portName: 
+  baud: 0
+  valueL: 0
+  valueR: 0

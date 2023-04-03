@@ -8,9 +8,7 @@ public class PlayerInputManager : MonoBehaviour
     private Singleton singleton;
     private ArduinoRead arduinoRead;
 
-    [Header("W and S")]
     public float Vertical;
-    [Header("A and D")]
     public float Horizontal;
     public event Action OnSpacePressed;
     [Header("Increase speed")]
@@ -40,10 +38,10 @@ public class PlayerInputManager : MonoBehaviour
     }
     private void Update()
     {
+        ArduinoCheck();
         vertical();
         horizontal();
         SpacePressed();
-        ArduinoCheck();
         controller_Right_limiter();
         controller_Left_limiter();
     }
@@ -70,7 +68,7 @@ public class PlayerInputManager : MonoBehaviour
         {
             Controller_Right += Time.deltaTime * increaseSpeed;
         }
-        if(Input.GetKey(KeyCode.J))
+        if (Input.GetKey(KeyCode.J))
         {
             Controller_Right -= Time.deltaTime * increaseSpeed;
         }

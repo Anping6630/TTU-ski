@@ -15,6 +15,7 @@ public class PlayerSki : MonoBehaviour
     [Header("·Æ³·½Õ¾ã")]
     [SerializeField]
     private float moveForce;
+    private float moveSpeed;
     [SerializeField]
     private float rotationSpeed;
     [SerializeField]
@@ -43,7 +44,12 @@ public class PlayerSki : MonoBehaviour
     }
     void moveForward()
     {
-        rb.AddForce(transform.forward * moveForce, ForceMode.Force);
+        moveCalculate();
+        rb.AddForce(transform.forward * moveSpeed, ForceMode.Force);
+    }
+    void moveCalculate()
+    {
+        moveSpeed = moveForce * (skiController_Left + skiController_Right);
     }
     void BoardSuck()
     {

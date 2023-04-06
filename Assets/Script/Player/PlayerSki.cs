@@ -55,7 +55,7 @@ public class PlayerSki : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = new Ray(transform.position, Vector3.down);
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit,2))
         {
             RotationWS.transform.up = hit.normal;
         }

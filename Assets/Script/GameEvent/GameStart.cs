@@ -9,6 +9,8 @@ public class GameStart : MonoBehaviour
     private Animator StartAnimation;
     private bool start;
     private bool playerControl;
+    [SerializeField]
+    private PlayerSki playerSkiSystem;
     private void Awake()
     {
         StartAnimation = GetComponent<Animator>();
@@ -50,6 +52,7 @@ public class GameStart : MonoBehaviour
         if(!start)
         {
             Time.timeScale = 0;
+            playerSkiSystem.enabled = false;
         }
     }
     private void activeTime()
@@ -57,6 +60,7 @@ public class GameStart : MonoBehaviour
         if(start)
         {
             Time.timeScale = 1;
+            playerSkiSystem.enabled = true ;
         }
     }
 }

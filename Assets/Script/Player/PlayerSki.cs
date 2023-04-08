@@ -32,6 +32,10 @@ public class PlayerSki : MonoBehaviour
         playerInput = singleton.playerInputManager;
         skiBoard = this.gameObject;
     }
+    private void FixedUpdate()
+    {
+        moveForward();
+    }
 
     void Update()
     {
@@ -39,7 +43,6 @@ public class PlayerSki : MonoBehaviour
         BoardSuck();
         skiRotate();
         setControllerValue();
-        moveForward();
         speedLimiter();
     }
     void moveForward()

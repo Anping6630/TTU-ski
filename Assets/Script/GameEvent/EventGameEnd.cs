@@ -10,6 +10,8 @@ public class EventGameEnd : MonoBehaviour
     private UserInterfaceSystem UISystem;
     [SerializeField]
     private GameObject Teacher;
+    [SerializeField]
+    private GameObject Player;
     [Header("Camera")]
     [SerializeField]
     private GameObject Camera_0;
@@ -18,19 +20,16 @@ public class EventGameEnd : MonoBehaviour
     [SerializeField]
     private GameObject Camera_2;
 
-    private void Start()
-    {
-        GameEnd();
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            //GameEnd();
+            GameEnd();
         }
     }
     public void GameEnd()
     {
+        Player.SetActive(false);
         UISystem.PlayMovie();
         OpenNewCamera_12();
         StartCoroutine(waitAndTriggerEvent());

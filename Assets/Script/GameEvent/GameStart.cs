@@ -14,7 +14,6 @@ public class GameStart : MonoBehaviour
     private void Awake()
     {
         StartAnimation = GetComponent<Animator>();
-        
     }
     private void Update()
     {

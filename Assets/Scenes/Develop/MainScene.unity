@@ -732,7 +732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &609303272
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5203,7 +5203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1728767b76f9a4b47a1943f7156425e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerInput: {fileID: 0}
+  PlayerInput: {fileID: 1455490794819918384}
   playerSkiSystem: {fileID: 2800118720427559893}
 --- !u!224 &3582033958888733805
 RectTransform:

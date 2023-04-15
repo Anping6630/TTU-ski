@@ -5,7 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField]
-    [Header("暫停選單")]
+    [Header("StopMenu")]
     private GameObject menu;
 
     private bool isGamePause;

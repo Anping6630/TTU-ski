@@ -46,6 +46,7 @@ public class GameStart : MonoBehaviour
         stopTime();
         activeTime();
     }
+
     private void stopTime()
     {
         if(!start)
@@ -59,7 +60,7 @@ public class GameStart : MonoBehaviour
         if(start)
         {
             Time.timeScale = 1;
-            playerSkiSystem.enabled = true ;
+            playerSkiSystem.enabled = true;
         }
     }
 }

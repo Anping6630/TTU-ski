@@ -12,7 +12,7 @@ public class PlayerSki : MonoBehaviour
     private float skiController_Left;
     private float skiController_Right;
     private float skirotation;
-    [Header("滑雪調整")]
+    [Header("moveingValue")]
     [SerializeField]
     private float moveForce;
     private float moveSpeed;
@@ -20,7 +20,7 @@ public class PlayerSki : MonoBehaviour
     private float rotationSpeed;
     [SerializeField]
     private float MaxSpeed;
-    [Header("抓地測試")]
+    [Header("Rotate")]
     [SerializeField]
     private GameObject RotationAD;
     [SerializeField]

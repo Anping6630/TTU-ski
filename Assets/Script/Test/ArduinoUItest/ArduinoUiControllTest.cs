@@ -9,55 +9,73 @@ public class ArduinoUiControllTest : MonoBehaviour
     private Singleton singleton;
     private PlayerInputManager InputManager;
 
-    public Button[] Selection;
+    public Button[] selection;
     public int index;
+    public float selectColldown;
+
+    private float cooldownTimer;
 
     void Start()
     {
         singleton = Singleton.singleton;
         InputManager = singleton.playerInputManager;
 
-        EventSystem.current.SetSelectedGameObject(Selection[index].gameObject);
+        EventSystem.current.SetSelectedGameObject(selection[index].gameObject);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown("o"))
+        cooldownTimer += 1;
+
+        if (InputManager.Controller_Left >= 0.8f && cooldownTimer >= selectColldown)
         {
-            if (index == 0)
-            {
-                index = Selection.Length-1;
-            }
-            else
-            {
-                index -= 1;
-            }
-            EventSystem.current.SetSelectedGameObject(Selection[index].gameObject);
+            cooldownTimer = 0;
+            SelectLeft();
         }
-        if (Input.GetKeyDown("p"))
+        if (InputManager.Controller_Right >= 0.8f && cooldownTimer >= selectColldown)
         {
-            if (index == Selection.Length - 1)
-            {
-                index = 0;
-            }
-            else
-            {
-                index += 1;
-            }
-            EventSystem.current.SetSelectedGameObject(Selection[index].gameObject);
+            cooldownTimer = 0;
+            SelectRight();
         }
-        if (Input.GetKeyDown("l") || InputManager.Controller_Right >= 0.8f)
+        if (InputManager.Controller_Left >= 0.6f && InputManager.Controller_Right >= 0.6f && cooldownTimer >= selectColldown)
         {
+            cooldownTimer = 0;
             Confirm();
         }
     }
 
     public void Ahoy(int i)
     {
-        print("Ahoy!"+i);
+        print(i);
     }
 
-    public void Confirm()
+    void SelectLeft()
+    {
+        if (index == 0)
+        {
+            index = selection.Length - 1;
+        }
+        else
+        {
+            index -= 1;
+        }
+        EventSystem.current.SetSelectedGameObject(selection[index].gameObject);
+    }
+
+    void SelectRight()
+    {
+        if (index == selection.Length - 1)
+        {
+            index = 0;
+        }
+        else
+        {
+            index += 1;
+        }
+        EventSystem.current.SetSelectedGameObject(selection[index].gameObject);
+    }
+
+    void Confirm()
     {
         EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
     }

@@ -4,14 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ArduinoUiControllTest : MonoBehaviour
+public class ArduinoUiController : MonoBehaviour
 {
     private Singleton singleton;
     private PlayerInputManager InputManager;
 
-    public Button[] selection;
-    public int index;
-    public float selectColldown;
+    [SerializeField]
+    private Button[] selection;
+    [SerializeField]
+    private int index;
+    [SerializeField]
+    private float selectColldown;
 
     private float cooldownTimer;
 
@@ -20,27 +23,27 @@ public class ArduinoUiControllTest : MonoBehaviour
         singleton = Singleton.singleton;
         InputManager = singleton.playerInputManager;
 
-        EventSystem.current.SetSelectedGameObject(selection[index].gameObject);
+        SelectFix();
     }
 
     void Update()
     {
         cooldownTimer += 1;
 
-        if (InputManager.Controller_Left >= 0.8f && cooldownTimer >= selectColldown)
+        if(cooldownTimer >= selectColldown)
         {
-            cooldownTimer = 0;
-            SelectLeft();
-        }
-        if (InputManager.Controller_Right >= 0.8f && cooldownTimer >= selectColldown)
-        {
-            cooldownTimer = 0;
-            SelectRight();
-        }
-        if (InputManager.Controller_Left >= 0.6f && InputManager.Controller_Right >= 0.6f && cooldownTimer >= selectColldown)
-        {
-            cooldownTimer = 0;
-            Confirm();
+            if (InputManager.Controller_Left >= 0.8f)
+            {
+                SelectLeft();
+            }
+            if (InputManager.Controller_Right >= 0.8f)
+            {
+                SelectRight();
+            }
+            if (InputManager.Controller_Left >= 0.6f && InputManager.Controller_Right >= 0.6f)
+            {
+                Confirm();
+            }
         }
     }
 
@@ -59,6 +62,7 @@ public class ArduinoUiControllTest : MonoBehaviour
         {
             index -= 1;
         }
+        cooldownTimer = 0;
         EventSystem.current.SetSelectedGameObject(selection[index].gameObject);
     }
 
@@ -72,11 +76,18 @@ public class ArduinoUiControllTest : MonoBehaviour
         {
             index += 1;
         }
+        cooldownTimer = 0;
         EventSystem.current.SetSelectedGameObject(selection[index].gameObject);
     }
 
     void Confirm()
     {
+        cooldownTimer = 0;
         EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
+    }
+
+    public void SelectFix()
+    {
+        EventSystem.current.SetSelectedGameObject(selection[index].gameObject);
     }
 }

@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+using TMPro;
+using System.Threading.Tasks;
 public class UserInterfaceSystem : MonoBehaviour
 {
     [SerializeField]
@@ -11,14 +12,28 @@ public class UserInterfaceSystem : MonoBehaviour
     private Animator CurtainAnimator;
     [SerializeField]
     private GameObject PlayerUI;
+    [SerializeField]
+    private GameObject GameStart;
     [Header("Camera")]
     [SerializeField]
     private GameObject playerCamera;
     [SerializeField]
     private GameObject newCamera;
+    [Header("Time")]
+    [SerializeField]
+    private TMP_Text TimeText;
+    [SerializeField]
+    private int CountDownSecond;
+    private int CountDownMinute;
+    private bool StopCountDown;
     private void Start()
     {
-        //PlayMovie();
+        ActiveGameStartSystem();
+        CountDownSystem();
+    }
+    private void Update()
+    {
+        displayTime();
     }
     public void PlayMovie()
     {
@@ -26,7 +41,6 @@ public class UserInterfaceSystem : MonoBehaviour
         CancelPlayerUI();
         OpenCurtain();
     }
-
     private void CancelPlayerControl()
     {
         playerInput.enabled = false;
@@ -43,4 +57,53 @@ public class UserInterfaceSystem : MonoBehaviour
     {
         PlayerUI.SetActive(false);
     }
+    private void ActiveGameStartSystem()
+    {
+        GameStart.SetActive(true);
+    }
+    private async void CountDownSystem()
+    {
+        int allSecond = CountDownSecond;
+        CountDownCaculate();
+        ToCountDown();    
+        await Task.Delay(allSecond * 1000);
+        CountDownFinish();
+    }
+    private void CountDownCaculate()
+    {
+        CountDownMinute = CountDownSecond / 60;
+        CountDownSecond = CountDownSecond % 60;
+    }
+    private async void ToCountDown()
+    {
+        while(CountDownMinute > 0 || CountDownSecond > 0)
+        {
+            ToCountDownCarry();
+            CountDownSecond -= 1;
+            await Task.Delay(1000);
+        }
+    }
+    private void ToCountDownCarry()
+    {
+        if (CountDownSecond <= 0 && CountDownMinute > 0)
+        {
+            CountDownSecond = 60;
+            CountDownMinute -= 1;
+        }
+    }
+    private void CountDownFinish()
+    {
+        Debug.Log("GameEnd");
+    }
+    private void displayTime()
+    {
+        string second = "";
+        string minute = "";
+        if (CountDownSecond <  10) second = "0" + CountDownSecond.ToString("");
+        if (CountDownSecond >= 10) second = CountDownSecond.ToString("");
+        if (CountDownMinute <  10) minute = "0" + CountDownMinute.ToString("");
+        if (CountDownMinute >= 10) minute = CountDownMinute.ToString("");
+        TimeText.text = minute + " : " + second;
+    }
+
 }

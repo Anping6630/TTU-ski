@@ -4,43 +4,51 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    private Singleton singleton;
+    private PlayerInputManager InputManager;
+
     [SerializeField]
     [Header("StopMenu")]
     private GameObject menu;
 
-    private bool isGamePause;
+    private float holdingTimer;
 
     void Start()
     {
-         GameResume();
+        singleton = Singleton.singleton;
+        InputManager = singleton.playerInputManager;
+
+        GameResume();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown("escape"))
+        if (InputManager.Controller_Left <= 0.05f && InputManager.Controller_Right <= 0.05f)
         {
-            if (isGamePause)
-            {
-                GameResume();
-            }
-            else
+            holdingTimer += 1;
+            if(holdingTimer == 300)
             {
                 GamePause();
             }
+            
+        }
+        else
+        {
+            holdingTimer = 0;
         }
     }
 
     public void GameResume()
     {
-        isGamePause = false;
         menu.SetActive(false);
         Time.timeScale = 1f;
+        holdingTimer = 0;
     }
 
     public void GamePause()
     {
-        isGamePause = true;
         menu.SetActive(true);
         Time.timeScale = 0f;
+        holdingTimer = 0;
     }
 }

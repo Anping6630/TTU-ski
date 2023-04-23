@@ -62,7 +62,7 @@ public class GameStart : MonoBehaviour
     {
         if(start)
         {
-            if(activeYet ==false)
+            if(activeYet == false)
             {
                 Time.timeScale = 1;
                 playerSkiSystem.enabled = true;

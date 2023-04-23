@@ -799,7 +799,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728593010}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bd83d198d2137d48b1adc679567375c, type: 3}
   m_Name: 
@@ -807,8 +807,11 @@ MonoBehaviour:
   playerInput: {fileID: 1455490794819918384}
   CurtainAnimator: {fileID: 338420413}
   PlayerUI: {fileID: 1445490832}
+  GameStart: {fileID: 0}
   playerCamera: {fileID: 9148622277908374443}
   newCamera: {fileID: 1794712729}
+  TimeText: {fileID: 0}
+  CountDownSecond: 0
 --- !u!114 &728593013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,6 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0339ad6205985449bf9a50e60800a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodText: {fileID: 1740712642}
 --- !u!114 &728593014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5485,6 +5489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1728767b76f9a4b47a1943f7156425e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIsystem: {fileID: 0}
   PlayerInput: {fileID: 1455490794819918384}
   playerSkiSystem: {fileID: 2800118720427559893}
 --- !u!224 &3582033958888733805

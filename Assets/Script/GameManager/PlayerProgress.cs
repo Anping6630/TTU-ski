@@ -5,17 +5,4 @@ using UnityEngine;
 public class PlayerProgress : MonoBehaviour
 {
     public static int wood;
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        print(wood);
-        if (Input.GetKeyDown("p"))
-        {
-            wood += 1;
-        }
-    }
 }

@@ -25,11 +25,11 @@ public class UserInterfaceSystem : MonoBehaviour
     [SerializeField]
     private int CountDownSecond;
     private int CountDownMinute;
-    private bool StopCountDown;
+    private bool stopCountDown;
+    private bool startCountDown;
     private void Start()
     {
         ActiveGameStartSystem();
-        CountDownSystem();
     }
     private void Update()
     {
@@ -61,13 +61,17 @@ public class UserInterfaceSystem : MonoBehaviour
     {
         GameStart.SetActive(true);
     }
-    private async void CountDownSystem()
+    public async void CountDownSystem()
     {
-        int allSecond = CountDownSecond;
-        CountDownCaculate();
-        ToCountDown();    
-        await Task.Delay(allSecond * 1000);
-        CountDownFinish();
+        if(!startCountDown)
+        {
+            int allSecond = CountDownSecond;
+            CountDownCaculate();
+            ToCountDown();
+            await Task.Delay(allSecond * 1000);
+            CountDownFinish();
+            startCountDown = true;
+        }
     }
     private void CountDownCaculate()
     {

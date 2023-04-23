@@ -5,10 +5,13 @@ using UnityEngine;
 public class GameStart : MonoBehaviour
 {
     [SerializeField]
+    private UserInterfaceSystem UIsystem;
+    [SerializeField]
     private PlayerInputManager PlayerInput;
     private Animator StartAnimation;
     private bool start;
     private bool playerControl;
+    private bool activeYet;
     [SerializeField]
     private PlayerSki playerSkiSystem;
     private void Awake()
@@ -59,8 +62,13 @@ public class GameStart : MonoBehaviour
     {
         if(start)
         {
-            Time.timeScale = 1;
-            playerSkiSystem.enabled = true;
+            if(activeYet ==false)
+            {
+                Time.timeScale = 1;
+                playerSkiSystem.enabled = true;
+                UIsystem.CountDownSystem();
+                activeYet = true;
+            }
         }
     }
 }

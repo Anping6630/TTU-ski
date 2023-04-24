@@ -21,6 +21,7 @@ public class ArduinoRead : MonoBehaviour
         try
         {
             sp.Open();
+            print("open");
         }
         catch (System.Exception)
         {
@@ -35,6 +36,7 @@ public class ArduinoRead : MonoBehaviour
             if (sp.IsOpen)
             {
                 string value = sp.ReadExisting();
+                print(value);
                 if (value != "")
                 {
                     string[] sArray = value.Split("~");

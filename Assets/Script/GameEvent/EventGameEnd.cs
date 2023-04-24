@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class EventGameEnd : MonoBehaviour
 {
     private bool Trigger;
+    [SerializeField]
+    private GameManager GM;
     [SerializeField]
     private UserInterfaceSystem UISystem;
     [SerializeField]
@@ -33,7 +36,12 @@ public class EventGameEnd : MonoBehaviour
         UISystem.PlayMovie();
         OpenNewCamera_12();
         StartCoroutine(waitAndTriggerEvent());
-
+        GoToPrinting();
+    }
+    private async void GoToPrinting()
+    {
+        await Task.Delay(8000);
+        GM.LoadScene("PrintingRoom");
     }
     private IEnumerator waitAndTriggerEvent()
     {

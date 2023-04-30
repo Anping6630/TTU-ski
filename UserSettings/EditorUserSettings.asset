@@ -6,34 +6,34 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 0106020303070b025e0b587115210e4413154f797a79223228781f32e6e5636e
-      flags: 0
-    RecentlyUsedSceneGuid-1:
-      value: 5a0003055c575c020956587216250f44414f1b792a292031282d4e31b4b3603b
-      flags: 0
-    RecentlyUsedSceneGuid-2:
-      value: 0504055e010d5c5a0e580d7a14205c44124e1e2b2e7e71332b784a66b6e3356e
-      flags: 0
-    RecentlyUsedSceneGuid-3:
-      value: 555002525201500e5c5a5a7714255b4413151929297e7636757e4a62b1b4326e
-      flags: 0
-    RecentlyUsedSceneGuid-4:
       value: 5254515e07570f0e5f0c542744700f44454f4f722e7e7e6929714a65b7b66c3b
       flags: 0
-    RecentlyUsedSceneGuid-5:
+    RecentlyUsedSceneGuid-1:
       value: 57545203030c5d5e540f5b2144750f44454e417d2d7c74607f7e1b32e0b1373d
       flags: 0
-    RecentlyUsedSceneGuid-6:
-      value: 5752075e5c57080d5c565b2114705944104f492c2e7d27357f7c4c62b6e16c3e
-      flags: 0
-    RecentlyUsedSceneGuid-7:
+    RecentlyUsedSceneGuid-2:
       value: 5402515503010d59555d587540700b4413164b792f707f617c2a4966b0b2303e
       flags: 0
-    RecentlyUsedSceneGuid-8:
+    RecentlyUsedSceneGuid-3:
       value: 5308035354570f030b5f092741250f444e4f4c722e7e76362e2c4e64b5e26339
       flags: 0
-    RecentlyUsedSceneGuid-9:
+    RecentlyUsedSceneGuid-4:
+      value: 0504055e010d5c5a0e580d7a14205c44124e1e2b2e7e71332b784a66b6e3356e
+      flags: 0
+    RecentlyUsedSceneGuid-5:
       value: 540904555c0550585d5e5a2011200b4446161a2c29707e3279711c37e0e1616a
+      flags: 0
+    RecentlyUsedSceneGuid-6:
+      value: 57055752530d0f58585b0d2614250944464e482f2a2a2462797a1961b4b46d6c
+      flags: 0
+    RecentlyUsedSceneGuid-7:
+      value: 555002525201500e5c5a5a7714255b4413151929297e7636757e4a62b1b4326e
+      flags: 0
+    RecentlyUsedSceneGuid-8:
+      value: 5a0003055c575c020956587216250f44414f1b792a292031282d4e31b4b3603b
+      flags: 0
+    RecentlyUsedSceneGuid-9:
+      value: 5752075e5c57080d5c565b2114705944104f492c2e7d27357f7c4c62b6e16c3e
       flags: 0
     UIBuilder.DisableMouseWheelZooming:
       value: 2550581500

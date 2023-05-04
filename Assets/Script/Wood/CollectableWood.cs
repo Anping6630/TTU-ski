@@ -8,7 +8,8 @@ public class CollectableWood: MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            PlayerProgress.wood += 1;
+            PlayerPrefs.SetInt("wood", PlayerPrefs.GetInt("wood")+1);
+            print(PlayerPrefs.GetInt("wood"));
             this.gameObject.SetActive(false);
         }
     }

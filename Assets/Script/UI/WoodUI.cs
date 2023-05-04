@@ -10,6 +10,6 @@ public class WoodUI : MonoBehaviour
 
     void Update()
     {
-        woodText.GetComponent<Text>().text = PlayerProgress.wood.ToString();
+        woodText.GetComponent<Text>().text = PlayerPrefs.GetInt("wood").ToString();
     }
 }

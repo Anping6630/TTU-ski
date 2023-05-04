@@ -540,9 +540,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portName: 
-  baud: 0
+  originL: 0
+  originR: 0
   valueL: 0
   valueR: 0
+  calibrationData:
+    topValue: 0
+    bottomValue: 0
 --- !u!114 &164149290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,7 +1218,7 @@ MonoBehaviour:
   - {fileID: 1736708955}
   - {fileID: 70002621}
   index: 0
-  selectColldown: 150
+  selectColldown: 200
 --- !u!114 &491506257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3117,7 +3121,7 @@ GameObject:
   - component: {fileID: 1529661612}
   - component: {fileID: 1529661618}
   m_Layer: 5
-  m_Name: PrintingRoomCanvas
+  m_Name: MainCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4286,7 +4290,7 @@ MonoBehaviour:
   - {fileID: 1118971886}
   - {fileID: 1565290574}
   index: 0
-  selectColldown: 150
+  selectColldown: 200
 --- !u!114 &1884128442
 MonoBehaviour:
   m_ObjectHideFlags: 0

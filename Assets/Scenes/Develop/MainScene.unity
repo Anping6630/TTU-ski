@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.02159933, g: 0.01971753, b: 0.053756725, a: 1}
+  m_IndirectSpecularColor: {r: 0.004494847, g: 0.0038807064, b: 0.009703706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2171,7 +2171,7 @@ MonoBehaviour:
   - {fileID: 1455490794918351584}
   - {fileID: 1455490795161102876}
   index: 0
-  selectColldown: 150
+  selectColldown: 200
 --- !u!1 &1616716644
 GameObject:
   m_ObjectHideFlags: 0
@@ -4532,7 +4532,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portName: COM3
-  baud: 9600
+  originL: 0
+  originR: 0
   valueL: 0
   valueR: 0
 --- !u!1 &1455490795539490258

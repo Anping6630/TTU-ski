@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Develop/PrintingRoom.unity
     guid: f518d85ac6a8dcc4d9fab67cf1754ca6
+  - enabled: 1
+    path: Assets/Scenes/Develop/ArduinoCalibration.unity
+    guid: 4c389ba6187cd3f4f81fb5ae25114a8f
   m_configObjects: {}

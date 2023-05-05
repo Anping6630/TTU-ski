@@ -26,7 +26,7 @@ public class PauseMenu : MonoBehaviour
         if (InputManager.Controller_Left <= 0.05f && InputManager.Controller_Right <= 0.05f)
         {
             holdingTimer += 1;
-            if(holdingTimer == 300)
+            if(holdingTimer == 450)
             {
                 GamePause();
             }
@@ -35,6 +35,11 @@ public class PauseMenu : MonoBehaviour
         else
         {
             holdingTimer = 0;
+        }
+
+        if (Input.GetKeyDown("Escape"))
+        {
+            GamePause();
         }
     }
 

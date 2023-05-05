@@ -5,15 +5,13 @@ using System.IO.Ports;
 
 public class ArduinoRead : MonoBehaviour
 {
-    [Header("ArduinoPort"),SerializeField]
-    string portName;
     public float originL, originR;
     public float valueL,valueR;
     SerialPort sp;
 
     void Start()
     {
-        sp = new SerialPort(portName,9600);
+        sp = new SerialPort(PlayerPrefs.GetString("portName"),9600);
         try
         {
             sp.Open();
@@ -38,13 +36,13 @@ public class ArduinoRead : MonoBehaviour
                     float.TryParse(sArray[0], out originL);
                     float.TryParse(sArray[1], out originR);
 
-                    if(Remap(originL) > 0 && Remap(originL) < 1)
+                    if(RemapL(originL) > 0 && RemapL(originL) < 1)
                     {
-                        valueL = Remap(originL);
+                        valueL = RemapL(originL);
                     }
-                    if (Remap(originR) > 0 && Remap(originR) < 1)
+                    if (RemapR(originR) > 0 && RemapR(originR) < 1)
                     {
-                        valueL = Remap(originR);
+                        valueR = RemapR(originR);
                     }
                 }
             }
@@ -60,20 +58,26 @@ public class ArduinoRead : MonoBehaviour
         CalibrationSave();
     }
 
-    float Remap(float x)
+    float RemapL(float x)
     {
-        return (x-PlayerPrefs.GetFloat("topValue"))/(PlayerPrefs.GetFloat("bottomValue")- PlayerPrefs.GetFloat("topValue"));
+        return (x - PlayerPrefs.GetFloat("bottomCalibrationL")) / (PlayerPrefs.GetFloat("topCalibrationL") - PlayerPrefs.GetFloat("bottomCalibrationL"));
+    }
+    float RemapR(float x)
+    {
+        return (x - PlayerPrefs.GetFloat("bottomCalibrationR")) / (PlayerPrefs.GetFloat("topCalibrationR") - PlayerPrefs.GetFloat("bottomCalibrationR"));
     }
 
     void CalibrationSave()
     {
         if (Input.GetKeyDown("q"))
         {
-            PlayerPrefs.SetFloat("topValue", originL);
+            PlayerPrefs.SetFloat("topCalibrationL", originL);
+            PlayerPrefs.SetFloat("topCalibrationR", originR);
         }
         if (Input.GetKeyDown("w"))
         {
-            PlayerPrefs.SetFloat("bottomValue", originR);
+            PlayerPrefs.SetFloat("bottomCalibrationL", originL);
+            PlayerPrefs.SetFloat("bottomCalibrationR", originR);
         }
     }
     void OnApplicationQuit()

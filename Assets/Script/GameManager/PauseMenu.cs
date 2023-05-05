@@ -37,7 +37,7 @@ public class PauseMenu : MonoBehaviour
             holdingTimer = 0;
         }
 
-        if (Input.GetKeyDown("Escape"))
+        if (Input.GetKeyDown("escape"))
         {
             GamePause();
         }

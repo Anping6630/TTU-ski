@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 public class UserInterfaceSystem : MonoBehaviour
 {
     [SerializeField]
+    private GameStart gameStart;
+    [SerializeField]
     private PlayerInputManager playerInput;
     [SerializeField]
     private Animator CurtainAnimator;
@@ -101,13 +103,16 @@ public class UserInterfaceSystem : MonoBehaviour
     }
     private void displayTime()
     {
-        string second = "";
-        string minute = "";
-        if (CountDownSecond <  10) second = "0" + CountDownSecond.ToString("");
-        if (CountDownSecond >= 10) second = CountDownSecond.ToString("");
-        if (CountDownMinute <  10) minute = "0" + CountDownMinute.ToString("");
-        if (CountDownMinute >= 10) minute = CountDownMinute.ToString("");
-        TimeText.text = minute + " : " + second;
+        if(gameStart.start)
+        {
+            string second = "";
+            string minute = "";
+            if (CountDownSecond < 10) second = "0" + CountDownSecond.ToString("");
+            if (CountDownSecond >= 10) second = CountDownSecond.ToString("");
+            if (CountDownMinute < 10) minute = "0" + CountDownMinute.ToString("");
+            if (CountDownMinute >= 10) minute = CountDownMinute.ToString("");
+            TimeText.text = minute + " : " + second;
+        }
     }
 
 }

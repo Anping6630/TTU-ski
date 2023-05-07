@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Develop/Menu.unity
     guid: 917c9b59d840ff0478c3fafaed3b634c
   - enabled: 1
-    path: Assets/Scenes/Develop/MainScene.unity
+    path: Assets/Scenes/Test/MainScene_old.unity
     guid: 6a6474951465dfd4ebace60f877134f6
   - enabled: 1
     path: Assets/Scenes/Develop/PrintingRoom.unity

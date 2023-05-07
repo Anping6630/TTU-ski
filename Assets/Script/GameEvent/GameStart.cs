@@ -9,7 +9,7 @@ public class GameStart : MonoBehaviour
     [SerializeField]
     private PlayerInputManager PlayerInput;
     private Animator StartAnimation;
-    private bool start;
+    public bool start;
     private bool playerControl;
     private bool activeYet;
     [SerializeField]

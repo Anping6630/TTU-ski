@@ -26,9 +26,6 @@ public class PlayerInputManager : MonoBehaviour
     private float maxLeft;
     [SerializeField]
     private float minLeft;
-    [Header("ArduinoControllMode")]
-    [SerializeField]
-    private bool isArduinoMode;
 
     private void Start()
     {
@@ -110,7 +107,7 @@ public class PlayerInputManager : MonoBehaviour
     }
     void ArduinoCheck()
     {
-        if (isArduinoMode)
+        if (PlayerPrefs.GetInt("ArduinoMode") == 1)
         {
             contorller_Arduino();
         }

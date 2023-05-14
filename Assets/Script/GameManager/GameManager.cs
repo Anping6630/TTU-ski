@@ -32,4 +32,8 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("ArduinoMode", 0);
         }
     }
+    public void resetTimeScale()
+    {
+        Time.timeScale = 1;
+    }
 }

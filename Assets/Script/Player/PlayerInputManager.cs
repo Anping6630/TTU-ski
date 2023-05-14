@@ -64,12 +64,10 @@ public class PlayerInputManager : MonoBehaviour
         if(Input.GetKey(KeyCode.I))
         {
             Controller_Right += Time.unscaledDeltaTime * increaseSpeed;
-            //Controller_Right += Time.deltaTime * increaseSpeed;
         }
         if (Input.GetKey(KeyCode.J))
         {
             Controller_Right -= Time.unscaledDeltaTime * increaseSpeed;
-            //Controller_Right -= Time.deltaTime * increaseSpeed;
         }
     }
     private void controller_Left()
@@ -77,12 +75,10 @@ public class PlayerInputManager : MonoBehaviour
         if (Input.GetKey(KeyCode.R))
         {
             Controller_Left += Time.unscaledDeltaTime * increaseSpeed;
-            //Controller_Left += Time.deltaTime * increaseSpeed;
         }
         if (Input.GetKey(KeyCode.F))
         {
             Controller_Left -= Time.unscaledDeltaTime * increaseSpeed;
-            //Controller_Left -= Time.deltaTime * increaseSpeed;
         }
     }
     private void contorller_Arduino()

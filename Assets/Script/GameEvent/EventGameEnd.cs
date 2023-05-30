@@ -22,6 +22,11 @@ public class EventGameEnd : MonoBehaviour
     private GameObject Camera_1;
     [SerializeField]
     private GameObject Camera_2;
+    [Header("Close")]
+    [SerializeField] private GameObject Close_1;
+    [SerializeField] private GameObject Close_2;
+    [SerializeField] private GameObject Close_3;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,6 +37,9 @@ public class EventGameEnd : MonoBehaviour
     }
     public void GameEnd()
     {
+        Close_1.SetActive(false);
+        Close_2.SetActive(false);
+        Close_3.SetActive(false);
         Player.SetActive(false);
         UISystem.PlayMovie();
         OpenNewCamera_12();

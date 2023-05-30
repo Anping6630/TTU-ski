@@ -20621,6 +20621,9 @@ MonoBehaviour:
   Camera_0: {fileID: 9148622277908374443}
   Camera_1: {fileID: 1794712729}
   Camera_2: {fileID: 993395081}
+  Close_1: {fileID: 789535810}
+  Close_2: {fileID: 1382501098}
+  Close_3: {fileID: 734972405}
 --- !u!65 &2036739365
 BoxCollider:
   m_ObjectHideFlags: 0

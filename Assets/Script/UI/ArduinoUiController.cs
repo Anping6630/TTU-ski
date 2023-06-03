@@ -39,17 +39,12 @@ public class ArduinoUiController : MonoBehaviour
             if (InputManager.Controller_Right >= 0.8f)
             {
                 SelectRight();
-            }
+            } 
             if (InputManager.Controller_Left >= 0.6f && InputManager.Controller_Right >= 0.6f)
             {
                 Confirm();
             }
         }
-    }
-
-    public void Ahoy(int i)
-    {
-        print(i);
     }
 
     void SelectLeft()
